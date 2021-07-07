@@ -1,6 +1,7 @@
-import os, discord, csv, asyncio
+import os, discord, csv, asyncio#bot libraries
 from random import randint
 from discord.ext import commands, tasks
+from webserver import keep_alive #server
 
 #Variables
 my_id = "<@255879838987059201>"
@@ -49,5 +50,6 @@ async def on_message(message):
     await message.channel.send(' %s hello you ' % mention)
 
 #Run Bot
+keep_alive()
 my_secret = os.environ['TOKEN']
 client.run(my_secret)
